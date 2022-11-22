@@ -1,0 +1,138 @@
+.category {
+  width: 1444px;
+  margin: 80px auto;
+  padding: 0 24px;
+}
+
+.category h1 {
+  color: #1d1f22;
+  font-weight: 400;
+  font-size: 42px;
+  text-transform: capitalize;
+}
+
+.grid-container--cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  align-items: flex-start;
+  column-gap: 40px;
+}
+
+.product-card {
+  margin: 103px 0;
+  cursor: pointer;
+}
+
+.product-card:hover {
+  box-shadow: 0px 4px 35px rgba(168, 172, 176, 0.3);
+}
+
+.product-details {
+  padding: 24px 16px 16px;
+  position: relative;
+}
+
+.product-image {
+  width: 354px;
+  height: 330px;
+  position: relative;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.product-title {
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 160%;
+
+  display: flex;
+  align-items: center;
+  color: #1d1f22;
+}
+
+.product-price {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 160%;
+  color: #1d1f22;
+}
+
+/* Out of stock or in stock */
+.in-stock {
+  display: none;
+}
+
+.out-of-stock {
+  display: block;
+  position: absolute;
+  background-color: #fff;
+  opacity: 0.5;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.out-of-stock p {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 160%;
+}
+
+.out-of-stock--bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  opacity: 0.5;
+}
+
+.out-of-stock-details div {
+  color: #8d8f9a;
+}
+
+.shopping-icon {
+  position: absolute;
+  bottom: 36px;
+  right: 0;
+  transform: translate(-50%, -50%);
+
+  z-index: 999;
+  width: 52px;
+  height: 52px;
+
+  opacity: 0;
+  visibility: none;
+  pointer-events: none;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.shopping-icon-active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.shopping-icon-active:hover {
+  filter: brightness(110%);
+}
+
+.category-link {
+  text-decoration: none;
+  color: inherit;
+}
