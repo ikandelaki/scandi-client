@@ -1,5 +1,5 @@
 import React from "react";
-import "./CurrencySwitcher.css";
+import "../styles/CurrencySwitcher.css";
 
 // Importing connect to map the state to props
 import { connect } from "react-redux";
@@ -27,7 +27,7 @@ class CurrencySwitcher extends React.Component {
     return this.state.data.currencies.map((currency, id) => {
       return (
         <div
-          className="currency-block"
+          className='currency-block'
           key={id}
           onClick={() => {
             this.props.selectCurrency(currency.symbol);
@@ -43,7 +43,7 @@ class CurrencySwitcher extends React.Component {
 
   render() {
     return (
-      <div className="curr">
+      <div className='curr'>
         <div
           className={`currency-switcher ${
             this.props.currencyOpen ? "active" : ""

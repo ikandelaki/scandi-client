@@ -1,5 +1,5 @@
 const queryFetch = (query, variables) => {
-  return fetch("https://scandi-project-server.herokuapp.com/", {
+  return fetch("http://localhost:4000/", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

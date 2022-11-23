@@ -1,0 +1,40 @@
+.currency-switcher {
+  position: absolute;
+  right: 9.5%;
+  display: flex;
+  flex-direction: column;
+
+  opacity: 0;
+  visibility: none;
+  pointer-events: none;
+  transform: translateY(-20%);
+
+  transition: all 0.3s;
+}
+
+.currency-switcher.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0%);
+}
+
+.currency-block {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  padding: 8px 16px;
+}
+
+.currency-block:hover {
+  background-color: #eee;
+  cursor: pointer;
+}
+
+.currency-block div:first-child {
+  justify-self: end;
+}
+
+.currency-block div:last-child {
+  align-self: start;
+}

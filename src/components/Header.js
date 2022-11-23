@@ -1,5 +1,5 @@
 import React from "react";
-import "./Header.css";
+import "../styles/Header.css";
 
 // Importing connect to map the state to props
 import { connect } from "react-redux";
@@ -55,7 +55,7 @@ class Header extends React.Component {
     if (!this.state.data) return;
     return this.state.data.categories.map((category, i) => {
       return (
-        <Link to="/" className="category-link" key={i}>
+        <Link to='/' className='category-link' key={i}>
           <li
             className={`${
               category.name === this.props.category ? "selected" : ""
@@ -71,26 +71,26 @@ class Header extends React.Component {
 
   render() {
     return (
-      <div className="header">
-        <div className="header-logo">
+      <div className='header'>
+        <nav className='header-navigation'>{this.renderCategories()}</nav>
+        <div className='header-logo'>
           <HeaderLogo />
         </div>
-        <nav className="header-navigation">{this.renderCategories()}</nav>
-        <div className="header-actions">
+        <div className='header-actions'>
           <div
-            className="currency"
+            className='currency'
             onClick={() => {
               this.props.toggleCurrency(!this.props.currencyOpen);
               this.props.toggleCart(false);
             }}
           >
-            <div className="currency-sign">{this.props.currency}</div>
+            <div className='currency-sign'>{this.props.currency}</div>
             <div>
               <DropdownLogo />
             </div>
           </div>
           <div
-            className="shopping-cart"
+            className='shopping-cart'
             onClick={() => {
               this.props.toggleCart(!this.props.cartOpen);
               this.props.toggleCurrency(false);
@@ -98,7 +98,7 @@ class Header extends React.Component {
           >
             <CartLogo />
             {this.cartItemQuantity() ? (
-              <div className="cart-item-count">{this.cartItemQuantity()}</div>
+              <div className='cart-item-count'>{this.cartItemQuantity()}</div>
             ) : null}
           </div>
         </div>

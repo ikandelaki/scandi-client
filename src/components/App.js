@@ -1,5 +1,5 @@
 import React from "react";
-import "./App.css";
+import "../styles/App.css";
 
 // Importing routers for setting the routes of the page
 import { BrowserRouter, Route, Switch } from "react-router-dom";
@@ -22,14 +22,14 @@ class App extends React.Component {
   render() {
     return (
       <BrowserRouter>
-        <div className="app">
+        <div className='app'>
           <Header />
           <CurrencySwitcher />
           <MiniCart />
           <Switch>
-            <Route path="/" exact component={Category} />
-            <Route path="/product/:id" component={ProductDescription} />
-            <Route path="/cart" component={Bag} />
+            <Route path='/' exact component={Category} />
+            <Route path='/product/:id' component={ProductDescription} />
+            <Route path='/cart' component={Bag} />
           </Switch>
         </div>
       </BrowserRouter>

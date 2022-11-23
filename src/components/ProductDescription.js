@@ -1,5 +1,5 @@
 import React from "react";
-import "./ProductDescription.css";
+import "../styles/ProductDescription.css";
 
 // Importing an initialized function and a constant for querying
 import queryFetch from "../api/queryFetch";
@@ -39,10 +39,10 @@ class ProductDescription extends React.Component {
         <div
           key={i}
           id={i}
-          className="pdp-image"
+          className='pdp-image'
           onClick={() => this.setState({ selectedImageId: i })}
         >
-          <img src={image} alt="" />
+          <img src={image} alt='' />
         </div>
       );
     });
@@ -54,7 +54,7 @@ class ProductDescription extends React.Component {
 
     return this.props.product.product.gallery.map((image, i) => {
       if (i === this.state.selectedImageId) {
-        return <img key={i} src={image} className="selected-image" alt="" />;
+        return <img key={i} src={image} className='selected-image' alt='' />;
       }
 
       return null;
@@ -64,8 +64,8 @@ class ProductDescription extends React.Component {
   // Render the attributes of a product
   renderAttributes = (attribute) => {
     return (
-      <div key={attribute.id} className="pdp-attribute-single">
-        <span className="pdp-attribute">{attribute.name}:</span>
+      <div key={attribute.id} className='pdp-attribute-single'>
+        <span className='pdp-attribute'>{attribute.name}:</span>
         <ul className={`pdp-list ${attribute.type}`}>
           {attribute.items.map((attrItem) => {
             if (attribute.type === "text") {
@@ -116,21 +116,21 @@ class ProductDescription extends React.Component {
     if (!product) return;
 
     return (
-      <div className="pdp-details">
-        <div className="pdp-title">
+      <div className='pdp-details'>
+        <div className='pdp-title'>
           <h1>{product.brand}</h1>
           <h2>{product.name}</h2>
         </div>
-        <div className="pdp-attributes">
+        <div className='pdp-attributes'>
           {product.attributes.map((attribute, i) => {
             return <div key={i}>{this.renderAttributes(attribute)}</div>;
           })}
         </div>
-        <div className="pdp-price">
-          <span className="pdp-attribute">Price:</span>
+        <div className='pdp-price'>
+          <span className='pdp-attribute'>Price:</span>
           {product.prices.map((price, i) => {
             return price.currency.symbol === this.props.currency ? (
-              <div className="pdp-price-amount" key={i}>
+              <div className='pdp-price-amount' key={i}>
                 {price.currency.symbol}
                 {price.amount}
               </div>
@@ -139,7 +139,7 @@ class ProductDescription extends React.Component {
         </div>
         {product.inStock ? (
           <div
-            className="pdp-add-to-cart"
+            className='pdp-add-to-cart'
             onClick={() =>
               this.props.addToCart(this.props.product.product, true)
             }
@@ -148,7 +148,7 @@ class ProductDescription extends React.Component {
           </div>
         ) : null}
         <div
-          className="pdp-description"
+          className='pdp-description'
           dangerouslySetInnerHTML={{ __html: product.description }}
         ></div>
       </div>
@@ -157,11 +157,11 @@ class ProductDescription extends React.Component {
 
   render() {
     return (
-      <div className="pdp pdp-grid">
-        <div ref={this.imageRef} className="pdp-images-container">
+      <div className='pdp pdp-grid'>
+        <div ref={this.imageRef} className='pdp-images-container'>
           {this.renderImages()}
         </div>
-        <div className="selected-image-container">
+        <div className='selected-image-container'>
           {this.renderSelectedImage()}
         </div>
         {this.renderProductDetails()}

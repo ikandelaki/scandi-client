@@ -1,0 +1,138 @@
+@media screen and (max-width: 1200px) {
+  .product-image {
+    width: 300px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .grid-container--cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .pdp-images-container {
+    grid-template-columns: 1fr;
+  }
+
+  .pdp-image {
+    width: 100px;
+    height: 100px;
+  }
+
+  .shopping-icon {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+}
+
+@media screen and (max-width: 777px) {
+  .mobile {
+    display: block;
+  }
+
+  .pdp-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .selected-image-container {
+    grid-row: 2 / -1;
+    grid-column: 1 / 2;
+  }
+
+  .pdp-details {
+    grid-row: 1 / -1;
+    grid-column: 2 / -1;
+  }
+
+  .pdp-images-container {
+    grid-auto-columns: auto;
+    grid-column: 1 / -1;
+  }
+
+  .bag-item-container {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .container-slider {
+    margin: 0;
+  }
+
+  .product-quantity {
+    height: 300px;
+  }
+
+  .pdp-images-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .product-image {
+    width: 250px;
+  }
+}
+
+@media screen and (max-width: 610px) {
+  .grid-container--cards {
+    grid-template-columns: 1fr;
+  }
+
+  .pdp-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pdp-details {
+    grid-row: 1 / 2;
+    grid-column: 1 / -1;
+    margin: auto;
+  }
+
+  .selected-image-container {
+    grid-row: 2 / 3;
+    grid-column: 1 / -1;
+  }
+
+  .header-logo {
+    display: none;
+  }
+
+  .currency-switcher {
+    background-color: white;
+  }
+}
+
+@media screen and (max-width: 465px) {
+  .header {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .currency-switcher {
+    width: 100%;
+    left: 0;
+    transform: translateY(0);
+  }
+
+  .currency-switcher.active {
+    transform: translateY(30%);
+  }
+
+  .mini-cart {
+    width: 100%;
+    left: 0;
+  }
+
+  .cart-product {
+    flex-direction: column;
+  }
+
+  .pdp-list.text {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .cart-list.text {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}

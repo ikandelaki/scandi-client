@@ -1,5 +1,5 @@
 import React from "react";
-import "./Category.css";
+import "../styles/Category.css";
 
 // Importing connect to map the state to props
 import { connect } from "react-redux";
@@ -45,14 +45,14 @@ class Category extends React.Component {
     return this.state.data.category.products.map((product) => {
       return (
         <div
-          className="product-card"
+          className='product-card'
           key={product.id}
           onMouseEnter={() => this.onProductHover(product.id)}
           onMouseLeave={() => this.onProductLeave()}
         >
-          <Link to={`product/${product.id}`} className="category-link">
-            <div className="product-image">
-              <img src={product.gallery[0]} alt="" />
+          <Link to={`product/${product.id}`} className='category-link'>
+            <div className='product-image'>
+              <img src={product.gallery[0]} alt='' />
               <div
                 className={`${product.inStock ? "in-stock" : "out-of-stock"}`}
               >
@@ -65,10 +65,10 @@ class Category extends React.Component {
               product.inStock ? "" : "out-of-stock-details"
             }`}
           >
-            <div className="product-title">
+            <div className='product-title'>
               {product.brand} {product.name}
             </div>
-            <div className="product-price">
+            <div className='product-price'>
               {this.props.currency}{" "}
               {product.prices.map((price) =>
                 price.currency.symbol === this.props.currency
@@ -108,9 +108,9 @@ class Category extends React.Component {
 
   render() {
     return (
-      <div className="category">
+      <div className='category'>
         <h1>{this.props.category}</h1>
-        <div className="grid-container--cards">{this.renderCategory()}</div>
+        <div className='grid-container--cards'>{this.renderCategory()}</div>
       </div>
     );
   }

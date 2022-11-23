@@ -1,5 +1,5 @@
 import React from "react";
-import "./Slider.css";
+import "../styles/Slider.css";
 
 import { ReactComponent as LeftArrow } from "../images/left.svg";
 import { ReactComponent as RightArrow } from "../images/right.svg";
@@ -26,11 +26,11 @@ class Slider extends React.Component {
   render() {
     return this.props.gallery.length === 1 ? (
       // Display a single image with no slider if there is only ONE image for the product
-      <div className="container-slider">
-        <img src={this.props.gallery[0]} alt="" />
+      <div className='container-slider'>
+        <img src={this.props.gallery[0]} alt='' />
       </div>
     ) : (
-      <div className="container-slider">
+      <div className='container-slider'>
         {this.props.gallery.map((image, index) => {
           return (
             <div
@@ -41,16 +41,16 @@ class Slider extends React.Component {
               }
               key={index}
             >
-              <img src={image} alt="" />
-              <div className="arrows-container">
+              <img src={image} alt='' />
+              <div className='arrows-container'>
                 <LeftArrow
                   onClick={() => this.prevSlide()}
-                  className="arrow arrow-left"
+                  className='arrow arrow-left'
                 />
 
                 <RightArrow
                   onClick={() => this.nextSlide()}
-                  className="arrow arrow-right"
+                  className='arrow arrow-right'
                 />
               </div>
             </div>

@@ -1,5 +1,5 @@
 import React from "react";
-import "./MiniCart.css";
+import "../styles/MiniCart.css";
 
 // Importing connect to map the state to props
 import { connect } from "react-redux";
@@ -26,8 +26,8 @@ class MiniCart extends React.Component {
   renderAttributes = (item) => {
     return item.attributes.map((attribute) => {
       return (
-        <div key={attribute.id} className="product-attributes">
-          <span className="product-attribute">{attribute.name}:</span>
+        <div key={attribute.id} className='product-attributes'>
+          <span className='product-attribute'>{attribute.name}:</span>
           <ul className={`product-list ${attribute.type}`}>
             {attribute.items.map((attrItem) => {
               if (attribute.type === "text") {
@@ -62,28 +62,28 @@ class MiniCart extends React.Component {
   // Render image and quantity regulator of the cart item
   renderImageAndQuantity = (item) => {
     return (
-      <div className="product-quantity-picture">
-        <div className="product-quantity">
+      <div className='product-quantity-picture'>
+        <div className='product-quantity'>
           <div
-            className="change-quantity"
+            className='change-quantity'
             onClick={() => this.props.addToCart(item)}
           >
             +
           </div>
           <div>{item.quantity}</div>
           <div
-            className="change-quantity"
+            className='change-quantity'
             onClick={() => this.props.removeFromCart(item)}
           >
             -
           </div>
         </div>
-        <div className="product-picture">
+        <div className='product-picture'>
           <Link
             to={`/product/${item.id}`}
             onClick={() => this.props.toggleCart(false)}
           >
-            <img src={item.gallery[0]} alt="" />
+            <img src={item.gallery[0]} alt='' />
           </Link>
         </div>
       </div>
@@ -95,12 +95,12 @@ class MiniCart extends React.Component {
     return this.props.cart.map((item, i) => {
       // if (!item.length) return;
       return (
-        <div key={i} className="cart-product">
+        <div key={i} className='cart-product'>
           {/* Rendering the item name and the price */}
-          <div className="cart-product-description">
+          <div className='cart-product-description'>
             <h4>{item.brand}</h4>
             <h4>{item.name}</h4>
-            <span className="product-price">
+            <span className='product-price'>
               {item.prices.map((price) =>
                 price.currency.symbol === this.props.currency
                   ? `${price.currency.symbol}${price.amount}`
@@ -143,7 +143,7 @@ class MiniCart extends React.Component {
           className={`mini-cart ${this.props.cartOpen ? "active" : ""}`}
           ref={this.miniCartRef}
         >
-          <h3 className="cart-title">
+          <h3 className='cart-title'>
             <span>My Bag,</span>{" "}
             <span>
               {this.props.cart.reduce(
@@ -153,20 +153,20 @@ class MiniCart extends React.Component {
               items
             </span>
           </h3>
-          <div className="cart-products-container">{this.renderItems()}</div>
+          <div className='cart-products-container'>{this.renderItems()}</div>
           {this.props.cart[0] ? (
             <div>
-              <div className="total-price">
+              <div className='total-price'>
                 <span>Total</span>
                 <span>
                   {this.props.currency}
                   {this.totalPrice()}
                 </span>
               </div>
-              <div className="view-checkout">
+              <div className='view-checkout'>
                 <Link
-                  to="/cart"
-                  className="bag-link"
+                  to='/cart'
+                  className='bag-link'
                   onClick={() => this.props.toggleCart(false)}
                 >
                   View Bag

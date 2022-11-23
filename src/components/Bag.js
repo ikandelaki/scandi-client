@@ -1,5 +1,5 @@
 import React from "react";
-import "./Bag.css";
+import "../styles/Bag.css";
 
 // importing action creators
 import { addToCart, removeFromCart } from "../actions";
@@ -14,8 +14,8 @@ class Bag extends React.Component {
   renderAttributes = (item) => {
     return item.attributes.map((attribute, i) => {
       return (
-        <div key={i} className="cart-attributes">
-          <span className="cart-attribute">{attribute.name}:</span>
+        <div key={i} className='cart-attributes'>
+          <span className='cart-attribute'>{attribute.name}:</span>
           <ul className={`cart-list ${attribute.type}`}>
             {attribute.items.map((attrItem) => {
               if (attribute.type === "text") {
@@ -53,11 +53,11 @@ class Bag extends React.Component {
 
     return this.props.cart.map((cartItem, i) => {
       return (
-        <div className="bag-item-container" key={i}>
-          <div className="bag-item-flex">
+        <div className='bag-item-container' key={i}>
+          <div className='bag-item-flex'>
             <h2>{cartItem.brand}</h2>
             <h3>{cartItem.name}</h3>
-            <span className="cart-item-price">
+            <span className='cart-item-price'>
               {cartItem.prices.map((price) => {
                 return price.currency.symbol === this.props.currency
                   ? price.currency.symbol + "" + price.amount
@@ -75,23 +75,23 @@ class Bag extends React.Component {
   // Render image and quantity regulator of the cart item
   renderImageAndQuantity = (item) => {
     return (
-      <div className="product-quantity-picture">
-        <div className="product-quantity">
+      <div className='product-quantity-picture'>
+        <div className='product-quantity'>
           <div
-            className="change-quantity-cart"
+            className='change-quantity-cart'
             onClick={() => this.props.addToCart(item)}
           >
             +
           </div>
-          <div className="cart-item-quantity">{item.quantity}</div>
+          <div className='cart-item-quantity'>{item.quantity}</div>
           <div
-            className="change-quantity-cart"
+            className='change-quantity-cart'
             onClick={() => this.props.removeFromCart(item)}
           >
             -
           </div>
         </div>
-        <div className="product-picture-cart">
+        <div className='product-picture-cart'>
           <Slider gallery={item.gallery} />
         </div>
       </div>
@@ -114,17 +114,17 @@ class Bag extends React.Component {
 
   render() {
     return (
-      <div className="bag-container">
+      <div className='bag-container'>
         <h1>Cart</h1>
-        <div className="bag-flex">{this.renderItems()}</div>
+        <div className='bag-flex'>{this.renderItems()}</div>
         {this.props.cart.length ? (
-          <div className="order-items">
+          <div className='order-items'>
             <div>
               <span>Tax 21%:</span>
               <span>Quantity:</span>
               <span>Total:</span>
             </div>
-            <div className="order-values">
+            <div className='order-values'>
               {/* Tax value */}
               <span>
                 {this.props.currency}
@@ -143,7 +143,7 @@ class Bag extends React.Component {
                 {this.totalPrice()}
               </span>
             </div>
-            <div className="order-btn">Order</div>
+            <div className='order-btn'>Order</div>
           </div>
         ) : (
           <p>There are no items in cart</p>
